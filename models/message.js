@@ -7,10 +7,10 @@ const messageSchema = new mongoose.Schema(
       required: true,
       maxLength: 200,
     },
-    // user: {
-    //   type: mongoose.Schema.Types.ObjectId,
-    //   ref: "User",
-    // },
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
   },
   {
     timestamps: true,
