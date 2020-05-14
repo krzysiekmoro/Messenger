@@ -1,8 +1,7 @@
-const express = require('express');
-const router = express.Router();
+const router = require('express').Router({ mergeParams: true });
 const { createMessage } = require('../controllers/messagesController');
 
-// /api/messages
+// /users/:id/messages
 router.route('/').post(createMessage);
 
 module.exports = router;

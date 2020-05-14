@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use("/api/auth", authRoutes);
-app.use("/api/messages", messagesRoutes);
+app.use("/api/users/:id/messages", messagesRoutes);
 
 app.use(errorHandler);
 
