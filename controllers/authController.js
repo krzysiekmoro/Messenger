@@ -49,11 +49,14 @@ exports.signin = async function (req, res, next) {
       });
     } else {
       return next({
-        status: 400,
-        message: "Invalid email or password",
+        status: 401,
+        message: "Invalid password",
       });
     }
   } catch (error) {
-    return next(error);
+    return next({
+      status: 401,
+      message: "Invalid email",
+    });
   }
 };
