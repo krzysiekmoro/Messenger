@@ -11,7 +11,7 @@ function App() {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <div id="top">
+        <div>
           <Navbar />
           <Main />
         </div>
