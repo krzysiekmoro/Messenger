@@ -34,3 +34,41 @@ body {
   padding: 1rem;
   z-index: -1;
 }
+
+.message-start{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.message-end{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.message-end .card{
+  background-color: #0099FF;
+  color: #fff;
+}
+
+.message-end .card-image{
+  display: none;
+}
+
+.message-end #card-username{
+  display: none;
+}
+
+.card-image{
+  align-self: flex-end;
+  margin: 5px 5px;
+  border-radius: 25px;
+}
+
+.card{
+  padding: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 15px;
+}
