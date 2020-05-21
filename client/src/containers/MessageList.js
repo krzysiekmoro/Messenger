@@ -11,11 +11,9 @@ class MessageList extends Component {
     const { messages, currentUser } = this.props;
     let messageList = messages.map((m) => {
       let sameUser = false
-      if(currentUser.user.id == m.user._id){
+      if(currentUser.user.id === m.user._id){
         sameUser = true;
       }
-      console.log(`Current user: ${currentUser.user.id}. 
-      Message user: ${m.user._id}`)
       return(<MessageItem
         key={m._id}
         date={m.createdAt}

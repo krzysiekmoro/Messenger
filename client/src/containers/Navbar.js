@@ -15,16 +15,12 @@ class Navbar extends Component {
           <div className="nav-wrapper">
             <div className="brand-logo center">
               <Link to="/">
-                {/* <img src={Logo} alt="Home" className="navbar-logo" /> */}
                 <i className="material-icons" id="icon">mail_outline</i>
                 <p className="right" id="brand-name">Messenger</p>
               </Link>
             </div>
             {this.props.currentUser.isAuthenticated ? (
               <ul className="right">
-                <li>
-                  <Link>New Message</Link>
-                </li>
                 <li>
                   <a onClick={this.logOut}>Log out</a>
                 </li>
