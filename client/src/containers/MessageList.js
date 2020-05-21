@@ -10,9 +10,9 @@ class MessageList extends Component {
   render() {
     const { messages, currentUser } = this.props;
     let messageList = messages.map((m) => {
-      let justifyContent = "start"
+      let sameUser = false
       if(currentUser.user.id == m.user._id){
-        justifyContent = "end";
+        sameUser = true;
       }
       console.log(`Current user: ${currentUser.user.id}. 
       Message user: ${m.user._id}`)
@@ -22,9 +22,7 @@ class MessageList extends Component {
         text={m.text}
         username={m.user.username}
         profileImageUrl={m.user.profileImageUrl}
-        currentUser={currentUser}
-        user={m.user.id}
-        justifyContent={justifyContent}
+        sameUser={sameUser}
       />)
     });
     return messageList

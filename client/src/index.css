@@ -52,14 +52,6 @@ body {
   color: #fff;
 }
 
-.message-end .card-image{
-  display: none;
-}
-
-.message-end #card-username{
-  display: none;
-}
-
 .card-image{
   align-self: flex-end;
   margin: 5px 5px;
