@@ -10,11 +10,17 @@ export const loadMessages = (messages) => ({
 export const fetchMessages = () => {
   return (dispatch) => {
     return apiCall("get", "/api/messages")
-      .then((res) => {
-        dispatch(loadMessages(res));
-      })
-      .catch((error) => {
-        dispatch(addError(error));
-      });
+      .then((res) => dispatch(loadMessages(res)))
+      .catch((error) => dispatch(addError(error)));
+  };
+};
+
+export const postNewMessage = (text) => {
+  return (dispatch, getState) => {
+    let { currentUser } = getState();
+    const id = currentUser.user.id;
+    return apiCall("post", `/api/users/${id}/messages`, { text })
+      .then((res) => {})
+      .catch((error) => dispatch(addError(error)));
   };
 };

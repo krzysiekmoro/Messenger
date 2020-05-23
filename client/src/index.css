@@ -2,6 +2,13 @@ body {
   background-color: #e6ecf0;
 }
 
+#homepage{
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  justify-content: space-between;
+}
+
 .navbar-fixed{
   margin-bottom: 1rem;
 }
@@ -63,4 +70,16 @@ body {
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 15px;
+}
+
+#new-message{
+  display: flex;
+  flex-direction: row;
+}
+
+#new-message button{
+  align-self: flex-end;
+  border: none;
+  cursor: pointer;
+  margin-left: 20px;
 }

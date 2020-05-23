@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import MessageTimeline from './MessageTimeline';
+import MessageForm from "../containers/MessageForm";
 
 const Homepage = ({ currentUser }) => {
   if (!currentUser.isAuthenticated) {
@@ -15,8 +16,9 @@ const Homepage = ({ currentUser }) => {
     );
   }
   return (
-    <div>
+    <div id="homepage">
       <MessageTimeline />
+      <MessageForm />
     </div>
   );
 };
