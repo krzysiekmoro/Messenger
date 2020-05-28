@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { postNewMessage } from "../store/actions/messages";
+import { postNewMessage, fetchMessages } from "../store/actions/messages";
+import { withRouter } from 'react-router';
 
 class MessageForm extends Component {
   constructor(props) {
@@ -12,16 +13,30 @@ class MessageForm extends Component {
 
   handleNewMessage = (e) => {
     e.preventDefault();
+    this.props.postNewMessage(this.state.message)
+    this.setState({ message: '' });
+    this.props.fetchMessages();
   };
 
   render() {
+    console.log(this.props)
     return (
       <form onSubmit={this.handleNewMessage} id="new-message">
         {this.props.errors.message && (
-          <div className="card-panel red lighten-1">{this.props.errors.message}</div>
+          <div className="card-panel red lighten-1">
+            {this.props.errors.message}
+          </div>
         )}
-        <input type="text" className="input-field" placeholder="Aa"></input>
-        <button type="submit"><i className="material-icons">send</i></button>
+        <input
+          type="text"
+          className="input-field"
+          placeholder="Aa"
+          value={this.state.message}
+          onChange={(e) => this.setState({ message: e.target.value })}
+        ></input>
+        <button type="submit">
+          <i className="material-icons">send</i>
+        </button>
       </form>
     );
   }
@@ -33,4 +48,5 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { postNewMessage })(MessageForm);
+MessageForm = withRouter(MessageForm);
+export default connect(mapStateToProps, { postNewMessage, fetchMessages })(MessageForm);
