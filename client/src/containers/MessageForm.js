@@ -19,7 +19,6 @@ class MessageForm extends Component {
   };
 
   render() {
-    console.log(this.props)
     return (
       <form onSubmit={this.handleNewMessage} id="new-message">
         {this.props.errors.message && (

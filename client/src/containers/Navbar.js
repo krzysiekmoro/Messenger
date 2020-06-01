@@ -10,7 +10,7 @@ class Navbar extends Component {
   };
   render() {
     return (
-      <div className="navbar-fixed">
+      <div className="navbar-fixed" id="navbar-component">
         <nav>
           <div className="nav-wrapper">
             <div className="brand-logo center">
