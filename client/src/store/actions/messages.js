@@ -12,7 +12,7 @@ export const fetchMessages = () => {
     return apiCall("get", "/api/messages")
       .then((res) => dispatch(loadMessages(res)))
       .catch((error) => dispatch(addError(error)));
-  };
+  }
 };
 
 export const postNewMessage = (text) => {

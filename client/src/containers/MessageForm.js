@@ -23,7 +23,7 @@ class MessageForm extends Component {
       <form onSubmit={this.handleNewMessage} id="new-message">
         {this.props.errors.message && (
           <div className="card-panel red lighten-1">
-            {this.props.errors.message}
+            {this.props.errors.message.message}
           </div>
         )}
         <input

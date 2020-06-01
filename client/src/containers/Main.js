@@ -8,13 +8,14 @@ import { removeError } from "../store/actions/errors";
 
 const Main = (props) => {
   const { authUser, errors, removeError, currentUser } = props;
+  console.log(localStorage)
   return (
     <div className="container">
       <Switch>
         <Route
           exact
           path="/"
-          render={(props) => <Homepage currentUser={currentUser} {...props} />}
+          render={(props) => <Homepage errors={errors} currentUser={currentUser} {...props} />}
         />
         <Route
           exact

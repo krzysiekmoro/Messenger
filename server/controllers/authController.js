@@ -1,6 +1,6 @@
 const db = require("../models");
 const jwt = require("jsonwebtoken");
-const comparePassword = require("../middleware/auth");
+const { comparePassword } = require("../middleware/auth");
 
 exports.signup = async function (req, res, next) {
   try {
